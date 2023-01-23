@@ -204,9 +204,9 @@ img {
   }
 
 
-  @media screen and (max-width:420px) {
+  @media screen and (min-width:420px) {
     .mob-contacts-link.accent {
-        font-size: 30px;
+        font-size: 36px;
     }
   }
 
