@@ -5,13 +5,9 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Portfolio</title>
-
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&family=Roboto:wght@400;500&display=swap"
-			rel="stylesheet"
-		/>
+		<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&family=Roboto:wght@400;500&display=swap" rel="stylesheet"/>
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
@@ -24,7 +20,7 @@
 	<body>
 		<!-- Header -->
 		<header class="page-header border">
-			<div class="container flex-nav">
+			<div class="container flex-nav mobile-burger">
 				<nav class="flex-nav">
 					<a href="./index.html" class="logo link"><span class="web">WEB</span>STUDIO</a>
 					<ul class="site-nav list">
@@ -33,12 +29,77 @@
 						<li class="item"><a href="./portfolio.html" class="links link">Contacts</a></li>
 					</ul>
 				</nav>
+				<!-- Mobile Menu -->
+				<button class="menu-toggle js-open-menu" type="button" 
+				aria-expanded="false" aria-controls="mobile-menu" aria-label="button mobile menu">
+					<svg class="mobile-menu-icon-open" width="32" height="32" aria-label="menu switch">
+						<use class="icon-burger" href="./img/icons.svg#burger-icon"></use>
+					</svg>
+				</button> 
+
+				<div class="menu-container js-menu-container" id="mobile-menu">
+					<button class="menu-toggle js-close-menu" 
+					type="button" 
+					aria-label="Button close mobile menu">
+					<svg width="8" height="8">
+						<use class="icon-close" href="./img/icons.svg#icon-close"></use>
+					</svg>
+				</button>
+
+				<ul class="mobile-menu list">
+					<li class="mobile-item"><a href="./index.html" class="mobile-links link">Studio</a></li>
+					<li class="mobile-item"><a href="./portfolio.html" class="mobile-links link">Portfolio</a></li>
+					<li class="mobile-item"><a href="./index.html" class="mobile-links now-active link">Contacts</a></li>
+				</ul>
+
+				<ul class="mobile-contacts list">
+					<li class="mobile-contacts-item">
+						<a href="tel:+11000111-11-11" class="mob-contacts-link accent link">+11 (000) 111-11-11</a>
+					</li>
+					<li class="mobile-contacts-item">
+						<a href="mailto:info@devstudio.com" class="mob-contacts-link link">info@devstudio.com</a>
+					</li>
+					<li>
+						<ul class="mobile-social list">
+							<li class="mob-soc-item">
+								<a href="#" aria-label="instagram-link" class="mob-soc-link">
+									<svg class="mob-soc-icon">
+										<use href="./img/icons.svg#icon-instagram-svg"></use>
+									</svg>
+								</a>
+							</li>
+							<li class="mob-soc-item">
+								<a href="#" aria-label="twitter-link" class="mob-soc-link">
+								<svg class="mob-soc-icon">
+									<use href="./img/icons.svg#icon-twitter-svg"></use>
+								</svg>
+							</a>
+							</li>
+							<li class="mob-soc-item">
+								<a href="#" aria-label="facebook-link" class="mob-soc-link">
+								<svg class="mob-soc-icon">
+									<use href="./img/icons.svg#icon-facebook-svg"></use>
+								</svg>
+							</a>
+							</li>
+							<li class="mob-soc-item">
+								<a href="#" aria-label="linkedin-link" class="mob-soc-link">
+								<svg class="mob-soc-icon">
+									<use href="./img/icons.svg#icon-linkedin-svg"></use>
+								</svg>
+							</a>
+							</li>
+						</ul>
+					</li>
+				</ul>	
+
+				</div>
 				<!-- Contacts -->
 				<ul class="contacts list">
-					<li class="item">
+					<li class="contacts-item">
 						<a href="mailto:info@devstudio.com" class="contacts link">info@devstudio.com</a>
 					</li>
-					<li class="item">
+					<li class="contacts-item">
 						<a href="tel:+11000111-11-11" class="contacts link">+11 (000) 111-11-11</a>
 					</li>
 				</ul>
@@ -59,7 +120,21 @@
 						<li class="portf-item">
 							<a href="#" class="portf-link link">
 								<div class="portf-overlay">
-									<img src="./img/portfolio-1.jpg" alt="banking-app" width="360" height="300" />
+									<picture>
+										<source srcset="./img/03_desktop/portfolio/banking-app.jpg 1x, ./img/03_desktop/portfolio/banking-app@2x.jpg 2x" 
+										media="(min-width: 1200px)" />
+
+										<source srcset="./img/02_tablet/portfolio/banking-app.jpg 1x, ./img/02_tablet/portfolio/banking-app@2x.jpg 2x" 
+										media="(min-width: 768px)" />
+
+										<source srcset="./img/01_mobile/portfolio/banking-app.jpg 1x, ./img/01_mobile/portfolio/banking-app@2x.jpg 2x" 
+										media="(min-width: 320px)" />
+
+										<img 
+										src="./img/portfolio-1.jpg" 
+										alt="banking-app"  />
+									</picture>
+
 									<div class="overlay-thumb">
 										<p class="overlay-text">
 											14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic
@@ -77,7 +152,19 @@
 						<li class="portf-item">
 							<a href="#" class="portf-link link">
 								<div class="portf-overlay">
-									<img src="./img/portfolio-2.jpg" alt="cashless-payment" width="360" height="300" />
+									<picture>
+										<source srcset="./img/03_desktop/portfolio/cashless-payment.jpg 1x, ./img/03_desktop/portfolio/cashless-payment@2x.jpg 2x" 
+										media="(min-width: 1200px)" />
+										<source srcset="./img/02_tablet/portfolio/cashless-payment.jpg 1x, ./img/02_tablet/portfolio/cashless-payment@2x.jpg 2x" 
+										media="(min-width: 768px)" />
+										<source srcset="./img/01_mobile/portfolio/cashless-payment.jpg 1x, ./img/01_mobile/portfolio/cashless-payment@2x.jpg 2x" 
+										media="(min-width: 320px)" />
+
+										<img 
+										src="./img/portfolio-2.jpg" 
+										alt="cashless-payment" />
+									</picture>
+									
 									<div class="overlay-thumb">
 										<p class="overlay-text">
 											14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic
@@ -95,7 +182,20 @@
 						<li class="portf-item">
 							<a href="#" class="portf-link link">
 								<div class="portf-overlay">
-									<img src="./img/portfolio-3.jpg" alt="meditaion-app" width="360" height="300" />
+									<picture>
+										<source srcset="./img/03_desktop/portfolio/meditation-app.jpg 1x, ./img/03_desktop/portfolio/meditation-app@2x.jpg 2x" 
+										media="(min-width: 1200px)" />
+
+										<source srcset="./img/02_tablet/portfolio/meditation-app.jpg 1x, ./img/02_tablet/portfolio/meditation-app@2x.jpg 2x" 
+										media="(min-width: 768px)" />
+										<source srcset="./img/01_mobile/portfolio/meditation-app.jpg 1x, ./img/01_mobile/portfolio/meditation-app@2x.jpg 2x" 
+										media="(min-width: 320px)" />
+
+										<img 
+										src="./img/portfolio-3.jpg" 
+										alt="meditaion-app" />
+									</picture>
+
 									<div class="overlay-thumb">
 										<p class="overlay-text">
 											14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic
@@ -113,7 +213,19 @@
 						<li class="portf-item">
 							<a href="#" class="portf-link link">
 								<div class="portf-overlay">
-									<img src="./img/portfolio-4.jpg" alt="taxi-service" width="360" height="300" />
+									<picture>
+										<source srcset="./img/03_desktop/portfolio/taxi-service.jpg 1x, ./img/03_desktop/portfolio/taxi-service@2x.jpg 2x" 
+										media="(min-width: 1200px)" />
+										<source srcset="./img/02_tablet/portfolio/taxi-service.jpg 1x, ./img/02_tablet/portfolio/taxi-service@2x.jpg 2x" 
+										media="(min-width: 768px)" />
+										<source srcset="./img/01_mobile/portfolio/taxi-service.jpg 1x, ./img/01_mobile/portfolio/taxi-service@2x.jpg 2x" 
+										media="(min-width: 320px)" />
+
+										<img 
+										src="./img/portfolio-4.jpg" 
+										alt="taxi-service" />
+									</picture>
+
 									<div class="overlay-thumb">
 										<p class="overlay-text">
 											14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic
@@ -131,7 +243,19 @@
 						<li class="portf-item">
 							<a href="#" class="portf-link link">
 								<div class="portf-overlay">
-									<img src="./img/portfolio-5.jpg" alt="screen-illustrations" width="360" height="300" />
+									<picture>
+										<source srcset="./img/03_desktop/portfolio/screen-illustrations.jpg 1x, ./img/03_desktop/portfolio/screen-illustrations@2x.jpg 2x" 
+										media="(min-width: 1200px)" />
+										<source srcset="./img/02_tablet/portfolio/screen-illustrations.jpg 1x, ./img/02_tablet/portfolio/screen-illustrations@2x.jpg 2x" 
+										media="(min-width: 768px)" />
+										<source srcset="./img/01_mobile/portfolio/screen-illustrations.jpg 1x, ./img/01_mobile/portfolio/screen-illustrations@2x.jpg 2x" 
+										media="(min-width: 320px)" />
+
+										<img 
+										src="./img/portfolio-5.jpg" 
+										alt="screen-illustrations" />
+									</picture>
+
 									<div class="overlay-thumb">
 										<p class="overlay-text">
 											14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic
@@ -149,7 +273,19 @@
 						<li class="portf-item">
 							<a href="#" class="portf-link link">
 								<div class="portf-overlay">
-									<img src="./img/portfolio-6.jpg" alt="online-courses" width="360" height="300" />
+									<picture>
+										<source srcset="./img/03_desktop/portfolio/online-courses.jpg 1x, ./img/03_desktop/portfolio/online-courses@2x.jpg 2x" 
+										media="(min-width: 1200px)" />
+										<source srcset="./img/02_tablet/portfolio/online-courses.jpg 1x, ./img/02_tablet/portfolio/online-courses@2x.jpg 2x" 
+										media="(min-width: 768px)" />
+										<source srcset="./img/01_mobile/portfolio/online-courses.jpg 1x, ./img/01_mobile/portfolio/online-courses@2x.jpg 2x" 
+										media="(min-width: 320px)" />
+
+										<img 
+										src="./img/portfolio-6.jpg" 
+										alt="online-courses" />
+									</picture>
+
 									<div class="overlay-thumb">
 										<p class="overlay-text">
 											14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic
@@ -167,7 +303,19 @@
 						<li class="portf-item">
 							<a href="#" class="portf-link link">
 								<div class="portf-overlay">
-									<img src="./img/portfolio-7.jpg" alt="instagram-stories-concept" width="360" height="300" />
+									<picture>
+										<source srcset="./img/03_desktop/portfolio/inst-stories.jpg 1x, ./img/03_desktop/portfolio/inst-stories@2x.jpg 2x" 
+										media="(min-width: 1200px)" />
+										<source srcset="./img/02_tablet/portfolio/inst-stories.jpg 1x, ./img/02_tablet/portfolio/inst-stories@2x.jpg 2x" 
+										media="(min-width: 768px)" />
+										<source srcset="./img/01_mobile/portfolio/inst-stories.jpg 1x, ./img/01_mobile/portfolio/inst-stories@2x.jpg 2x" 
+										media="(min-width: 320px)" />
+
+										<img 
+										src="./img/portfolio-7.jpg" 
+										alt="instagram-stories-concept" />
+									</picture>
+
 									<div class="overlay-thumb">
 										<p class="overlay-text">
 											14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic
@@ -185,7 +333,19 @@
 						<li class="portf-item">
 							<a href="#" class="portf-link link">
 								<div class="portf-overlay">
-									<img src="./img/portfolio-8.jpg" alt="organic-food" width="360" height="300" />
+									<picture>
+										<source srcset="./img/03_desktop/portfolio/organic-food.jpg 1x, ./img/03_desktop/portfolio/organic-food@2x.jpg 2x" 
+										media="(min-width: 1200px)" />
+										<source srcset="./img/02_tablet/portfolio/organic-food.jpg 1x, ./img/02_tablet/portfolio/organic-food@2x.jpg 2x" 
+										media="(min-width: 768px)" />
+										<source srcset="./img/01_mobile/portfolio/organic-food.jpg 1x, ./img/01_mobile/portfolio/organic-food@2x.jpg 2x" 
+										media="(min-width: 320px)" />
+
+										<img 
+										src="./img/portfolio-8.jpg" 
+										alt="organic-food" />
+									</picture>
+
 									<div class="overlay-thumb">
 										<p class="overlay-text">
 											14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic
@@ -203,7 +363,19 @@
 						<li class="portf-item">
 							<a href="#" class="portf-link link">
 								<div class="portf-overlay">
-									<img src="./img/portfolio-9.jpg" alt="fresh-coffee" width="360" height="300" />
+									<picture>
+										<source srcset="./img/03_desktop/portfolio/fresh-coffee.jpg 1x, ./img/03_desktop/portfolio/fresh-coffee@2x.jpg 2x" 
+										media="(min-width: 1200px)" />
+										<source srcset="./img/02_tablet/portfolio/fresh-coffee.jpg 1x, ./img/02_tablet/portfolio/fresh-coffee@2x.jpg 2x" 
+										media="(min-width: 768px)" />
+										<source srcset="./img/01_mobile/portfolio/fresh-coffee.jpg 1x, ./img/01_mobile/portfolio/fresh-coffee@2x.jpg 2x" 
+										media="(min-width: 320px)" />
+
+										<img 
+										src="./img/portfolio-9.jpg" 
+										alt="fresh-coffee" />
+									</picture>
+
 									<div class="overlay-thumb">
 										<p class="overlay-text">
 											14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic
@@ -278,5 +450,6 @@
 				
 			</div>
 		</footer>
+		<script defer src="./mobile-menu.js"></script>
 	</body>
 </html>
